@@ -25,7 +25,7 @@ class Logger(object):
         # event logged ends up on a separate line!
         with open(self.file_name, 'w+') as f:
             f.write(f"Starting {virus_name} simulation!\n")
-            f.write(f"Population size: {pop_size}, percentage vaccinated: {vacc_percentage * 100}%\n")
+            f.write(f"Population size: {pop_size}, percentage vaccinated: {vacc_percentage}%\n")
             f.write(f"Virus mortality rate: {mortality_rate}, reproduction rate: {basic_repro_num}%\n")
             f.write(f"Initially infected people: {initial_infected}")
         f.close()
