@@ -47,13 +47,13 @@ class Logger(object):
         # exactly what happened in the interaction and create a String, and write to your logfile.
         with open(self.file_name, "a+") as f:
             if did_infect:
-                f.write(f"{person._id} infected {random_person._id}\n")
+                f.write(f"Person #{person._id} infected person #{random_person._id}\n")
             elif random_person_vacc:
-                f.write(f"{person._id} didn't infect {random_person._id} because they're already vaccinated.\n")
+                f.write(f"Person #{person._id} didn't infect person #{random_person._id} because they're already vaccinated.\n")
             elif random_person_sick:
-                f.write(f"{person._id} didn't infect {random_person._id} because they've already gotten sick.\n")
+                f.write(f"Person #{person._id} didn't infect person #{random_person._id} because they've already gotten sick.\n")
             else:
-                f.write(f"{person._id} didn't infect {random_person._id}\n")
+                f.write(f"Person #{person._id} didn't infect person #{random_person._id}\n")
         f.close()
 
     def log_infection_survival(self, person, did_die_from_infection):
@@ -68,9 +68,9 @@ class Logger(object):
         # Append the results of the infection to the logfile
         with open(self.file_name, "a+") as f:
             if did_die_from_infection:
-                f.write(f"{person._id} died from infection, R.I.P. to them.\n")
+                f.write(f"Person #{person._id} died from infection, R.I.P. to them.\n")
             else:
-                f.write(f"{person._id} have survived the infection, congrats!\n")
+                f.write(f"Person #{person._id} has survived the infection, congrats!\n")
         f.close()
 
     def log_time_step(self, time_step_number, current_infected, total_dead):
